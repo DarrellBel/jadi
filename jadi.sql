@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Waktu pembuatan: 22 Mar 2025 pada 10.55
+=======
+-- Waktu pembuatan: 22 Mar 2025 pada 07.46
+>>>>>>> 6b4d8e1ef37b6e0b704a8b097fbe9ced123b2c7c
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -18,7 +22,11 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
+<<<<<<< HEAD
 -- Database: `jadi`
+=======
+-- Database: `joinproject`
+>>>>>>> 6b4d8e1ef37b6e0b704a8b097fbe9ced123b2c7c
 --
 
 -- --------------------------------------------------------
@@ -39,10 +47,14 @@ CREATE TABLE `projects` (
 --
 
 INSERT INTO `projects` (`id`, `project_name`, `status`, `kategori`) VALUES
+<<<<<<< HEAD
 (23, 'Galeri', 'Pending', 'Website'),
 (24, 'Buku Baru', 'Published', 'Website'),
 (25, 'wwwwwwwwwwwwwww', 'Pending', 'Website'),
 (26, 'Bensin Bekas', 'Pending', 'Website');
+=======
+(20, 'Buku Baru', 'Archived', 'Mobile');
+>>>>>>> 6b4d8e1ef37b6e0b704a8b097fbe9ced123b2c7c
 
 -- --------------------------------------------------------
 
@@ -58,6 +70,7 @@ CREATE TABLE `todolist` (
   `jumlah` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+<<<<<<< HEAD
 --
 -- Dumping data untuk tabel `todolist`
 --
@@ -65,6 +78,8 @@ CREATE TABLE `todolist` (
 INSERT INTO `todolist` (`id`, `nama_todo`, `nama_project`, `status`, `jumlah`) VALUES
 (31, 'Baru', 'Galeri', 'Done', 4);
 
+=======
+>>>>>>> 6b4d8e1ef37b6e0b704a8b097fbe9ced123b2c7c
 -- --------------------------------------------------------
 
 --
@@ -92,9 +107,13 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
 (7, 'Tono', 'tono@gmail.com', '$2y$10$cirKE9nullDpr1W9x.laOujG1OE45tU9zuXyOGvXF7S7ZRAHVTn.q'),
 (8, 'sss', 'darrellgta@gmail.com', '$2y$10$6dhRObqtjp8XadWqcBn45O92Z1Q/D7JQZ7RCRWHJeBAS8l/vYIofy'),
 (9, 'sera', 's@gmail.com', '$2y$10$KMFbXRa0ZrTJf1R60pMZ6OSrvC8B673GdIeWVQS.gkOmhBz5KuypC'),
+<<<<<<< HEAD
 (10, 'eko', 'eko@gmail.com', '$2y$10$UYFvZ2m55VxbWs6qZtWkGO.Zmq0t4iRogioWbx3QbwKIvCLYL/u1u'),
 (11, 'unta', '1u@gmail.com', '$2y$10$.GxABUHPr1.F9I8fiBtm6OaFQGfxc3m4cTKovofIcSlD2sW6lzc32'),
 (12, 'user22', 'user@example.com', '$2y$10$W37d8UIEjUvI2pk5LIJUk.sKAYGVP3cdJ/qkWH9BtH.St8svsJYTS');
+=======
+(10, 'eko', 'eko@gmail.com', '$2y$10$UYFvZ2m55VxbWs6qZtWkGO.Zmq0t4iRogioWbx3QbwKIvCLYL/u1u');
+>>>>>>> 6b4d8e1ef37b6e0b704a8b097fbe9ced123b2c7c
 
 --
 -- Indexes for dumped tables
@@ -128,19 +147,31 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `projects`
 --
 ALTER TABLE `projects`
+<<<<<<< HEAD
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+=======
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+>>>>>>> 6b4d8e1ef37b6e0b704a8b097fbe9ced123b2c7c
 
 --
 -- AUTO_INCREMENT untuk tabel `todolist`
 --
 ALTER TABLE `todolist`
+<<<<<<< HEAD
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+=======
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+>>>>>>> 6b4d8e1ef37b6e0b704a8b097fbe9ced123b2c7c
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
+<<<<<<< HEAD
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+=======
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+>>>>>>> 6b4d8e1ef37b6e0b704a8b097fbe9ced123b2c7c
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
