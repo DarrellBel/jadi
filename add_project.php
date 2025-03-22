@@ -34,7 +34,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
     background-attachment: fixed;
     color: #343a40;
-}
+  }
+  .form-container {
+    border: 2px solid #343a40;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: auto;
+  }
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -56,6 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <div class="container mt-5">
     <h2 class="text-center">Tambah Proyek</h2>
+    <div class="form-container">
     <form method="POST">
         <div class="mb-3">
             <label class="form-label">Nama Proyek</label>
@@ -81,6 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <button type="submit" class="btn btn-primary">Tambah</button>
         <a href="dashboard.php" class="btn btn-secondary">Kembali</a>
     </form>
+    </div>
 </div>
 </body>
 </html>
@@ -88,13 +99,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script>
-
 document.addEventListener("DOMContentLoaded", function () {
     let formModified = false;
     const form = document.querySelector("form");
     const inputs = form.querySelectorAll("input, select");
     
-    // Deteksi jika ada perubahan pada form
     inputs.forEach(input => {
         input.addEventListener("change", () => {
             formModified = true;

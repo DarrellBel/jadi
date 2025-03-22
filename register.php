@@ -32,7 +32,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -42,14 +41,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
-       <style>
-  body {
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
-    background-attachment: fixed;
-    color: #343a40;
-}
+        body {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
+            background-attachment: fixed;
+            color: #343a40;
+        }
         .card {
             border-radius: 15px;
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.5);
         }
         .form-control {
             border-radius: 10px;
@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </style>
 </head>
 <body class="d-flex justify-content-center align-items-center vh-100">
-    <div class="card shadow-lg p-4" style="width: 380px; background: white;">
+    <div class="card shadow-lg p-4" style="width: 380px;">
         <h3 class="text-center text-primary">Registrasi</h3>
         
         <?php if ($errorMessage): ?>

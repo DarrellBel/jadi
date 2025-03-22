@@ -1,5 +1,5 @@
 <?php
-include "koneksi.php"; 
+include "koneksi.php";
 session_start();
 
 $errorMessage = "";
@@ -30,8 +30,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,26 +41,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
-  body {
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
-    background-attachment: fixed;
-    color: #343a40;
-}
+        body {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
+            background-attachment: fixed;
+            color: #343a40;
+        }
+
         .card {
             border-radius: 15px;
         }
+
         .form-control {
             border-radius: 10px;
         }
+
         .btn {
             border-radius: 10px;
         }
     </style>
 </head>
+
 <body class="d-flex justify-content-center align-items-center vh-100">
     <div class="card shadow-lg p-4" style="width: 380px; background: white;">
         <h3 class="text-center text-primary">Login</h3>
-        
+
         <?php if ($errorMessage): ?>
             <div class="alert alert-danger">
                 <?php echo $errorMessage; ?>
@@ -79,4 +85,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p class="text-center mt-2">Belum punya akun? <a href="register.php" class="text-decoration-none">Daftar</a></p>
     </div>
 </body>
+
 </html>

@@ -50,11 +50,18 @@ if (isset($_SESSION['flash_message'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
     <style>
-  body {
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
-    background-attachment: fixed;
-    color: #343a40;
-}
+        body {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
+            background-attachment: fixed;
+            color: #343a40;
+        }
+        .form-container {
+            border: 2px solid #343a40;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -66,36 +73,37 @@ if (isset($_SESSION['flash_message'])) {
             </div>
         <?php endif; ?>
         <h2 class="text-center">Todo List</h2>
-        <form method="POST">
-        <div class="mb-3">
-    <label class="form-label">Nama Proyek</label>
-    <input type="text" class="form-control" value="<?= htmlspecialchars($project['project_name']); ?>" readonly>
-    <input type="hidden" name="nama_project" value="<?= htmlspecialchars($project['project_name']); ?>">
-</div>
-
-            <div class="mb-3">
-                <label class="form-label">Nama Todo</label>
-                <input type="text" name="nama_todo" class="form-control" placeholder="Masukkan Nama Todo" required>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Status</label>
-                <select name="status" class="form-control">
-                    <option value="In-Progress">In-Progress</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Kategori</label>
-                <select name="jumlah" class="form-control">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-primary">Tambah Todo</button>
-            <a href="list_project.php" class="btn btn-secondary" onclick="return confirmExit()">Kembali</a>
-        </form>
+        <div class="form-container">
+            <form method="POST">
+                <div class="mb-3">
+                    <label class="form-label">Nama Proyek</label>
+                    <input type="text" class="form-control" value="<?= htmlspecialchars($project['project_name']); ?>" readonly>
+                    <input type="hidden" name="nama_project" value="<?= htmlspecialchars($project['project_name']); ?>">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Nama Todo</label>
+                    <input type="text" name="nama_todo" class="form-control" placeholder="Masukkan Nama Todo" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Status</label>
+                    <select name="status" class="form-control">
+                        <option value="In-Progress">In-Progress</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Kategori</label>
+                    <select name="jumlah" class="form-control">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Tambah Todo</button>
+                <a href="list_project.php" class="btn btn-secondary" onclick="return confirmExit()">Kembali</a>
+            </form>
+        </div>
     </div>
 
     <script>
