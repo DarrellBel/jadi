@@ -46,11 +46,11 @@ if (isset($_GET['id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Review Todo</title>
     <style>
-  body {
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
-    background-attachment: fixed;
-    color: #343a40;
-}
+        body {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
+            background-attachment: fixed;
+            color: #343a40;
+        }
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -85,7 +85,7 @@ if (isset($_GET['id'])) {
         </div>
 
         <!-- Form to update the status -->
-        <form method="POST" class="mt-3">
+        <form method="POST" class="mt-3" id="todoForm">
             <div class="mb-3">
                 <label for="status" class="form-label">Update Status</label>
                 <select name="status" class="form-select" id="status">
@@ -97,27 +97,62 @@ if (isset($_GET['id'])) {
             <button type="submit" class="btn btn-primary">Update Status</button>
         </form>
 
+        <!-- Back Button -->
+        <button class="btn btn-secondary mt-3" id="backBtn">Kembali</button>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        // Confirm Logout Function
+        function confirmLogout() {
+            Swal.fire({
+                title: "Apakah Anda yakin?",
+                text: "Anda akan keluar dari akun!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#d33",
+                cancelButtonColor: "#3085d6",
+                confirmButtonText: "Ya, Logout!",
+                cancelButtonText: "Batal"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "logout.php"; 
+                }
+            });
+        }
+
+        // Detect changes in the form to warn the user before navigating away
+        let formChanged = false;
+        const form = document.getElementById("todoForm");
+        const statusSelect = document.getElementById("status");
+
+        // Check if the form has been changed
+        statusSelect.addEventListener("change", () => {
+            formChanged = true;
+        });
+
+        // When clicking on "Kembali", confirm before navigating away
+        document.getElementById("backBtn").addEventListener("click", function(event) {
+            if (formChanged) {
+                event.preventDefault(); // Prevent the default action
+                Swal.fire({
+                    title: "Anda memiliki perubahan yang belum disimpan!",
+                    text: "Apakah Anda yakin ingin meninggalkan halaman ini?",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#d33",
+                    cancelButtonColor: "#3085d6",
+                    confirmButtonText: "Ya, Kembali!",
+                    cancelButtonText: "Batal"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = "todolist.php"; // Redirect to todolist.php
+                    }
+                });
+            } else {
+                window.location.href = "todolist.php"; // Directly navigate without confirmation
+            }
+        });
+    </script>
 </body>
 </html>
-
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
-function confirmLogout() {
-    Swal.fire({
-        title: "Apakah Anda yakin?",
-        text: "Anda akan keluar dari akun!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#d33",
-        cancelButtonColor: "#3085d6",
-        confirmButtonText: "Ya, Logout!",
-        cancelButtonText: "Batal"
-    }).then((result) => {
-        if (result.isConfirmed) {
-            window.location.href = "logout.php"; 
-        }
-    });
-}
-</script>
